@@ -28,9 +28,9 @@ oot_channel_id_list = ["620842231229841421",  #gnew
 
 answer_pattern = re.compile(r'(not|n)?([1-3]{1})(\?)?(cnf)?(\?)?$', re.IGNORECASE)
 
-apgscore = 200
-nomarkscore = 100
-markscore = 50
+apgscore = 225
+nomarkscore = 150
+markscore = 75
 
 async def update_scores(content, answer_scores):
     global answer_pattern
@@ -229,7 +229,7 @@ class Bot(discord.Client):
         await self.clear_results()
         await self.update_embeds()
         #await self.change_presence(activity=discord.Game(name='with '+str(len(set(self.get_all_members())))+' users'))
-        await self.change_presence(activity=discord.Activity(type=1,name='with HQ ANSWER!!'))
+        await self.change_presence(activity=discord.Activity(type=1,name='with HQ ANSWER !!'))
 
     async def on_message(self, message):
 
@@ -287,7 +287,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     upd_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.create_task(bot.start('NjU2NTQ3MTAwNjMyNDE2MjU5.XfkPRw.FwQaNMJrTnRcmtW0753uC3TIZFI'))
+    loop.create_task(bot.start('NjU4NzMxMDY5MTM4NDAzMzYw.XgEBWQ.29jxAdeBPHkzKXmvXRUdc2ISh-Y'))
     loop.run_forever()
 
 
@@ -296,7 +296,7 @@ def selfbot_process(update_event, answer_scores):
     selfbot = SelfBot(update_event, answer_scores)
 
     loop = asyncio.get_event_loop()
-    loop.create_task(selfbot.start('NTYwMDk0Mzk2ODg4OTA3Nzg2.XeZ9OA.KcUv3HmuO8UMZQg5i-A8FE_sjA4',
+    loop.create_task(selfbot.start('NjU4NzI3NDk4NTE0ODI1MjI2.XgD-Gg.B8AvW0p2nHX3ddSISRtythr2YCM',
                                    bot=False))
     loop.run_forever()
 
